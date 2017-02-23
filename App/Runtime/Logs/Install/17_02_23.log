@@ -1,0 +1,241 @@
+[ 2017-02-23T11:24:22+08:00 ] 127.0.0.1 /install.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000108s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000031s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014855s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000478s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000654s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2017-02-23T11:24:31+08:00 ] 127.0.0.1 /install.php/Install/Install/step1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000290s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007916s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2017-02-23T11:24:39+08:00 ] 127.0.0.1 /install.php/Install/Install/step2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000316s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006049s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000395s ]
+
+[ 2017-02-23T11:25:28+08:00 ] 127.0.0.1 /install.php/Install/Install/step2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000282s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000141s ]
+
+[ 2017-02-23T11:25:40+08:00 ] 127.0.0.1 /install.php/Install/Install/step2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+NOTIC: [8] Undefined offset: 6 /Applications/XAMPP/xamppfiles/htdocs/jiedai/App/Install/Controller/InstallController.class.php 第 65 行.
+NOTIC: [8] Undefined index: db_name /Applications/XAMPP/xamppfiles/htdocs/jiedai/ThinkPHP/Library/Think/Db.class.php 第 68 行.
+SQL: CREATE DATABASE IF NOT EXISTS `jiedai` DEFAULT CHARACTER SET utf8 [ RunTime:0.0036s ]
+
+[ 2017-02-23T11:25:40+08:00 ] 127.0.0.1 /install.php/Install/Install/step3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004371s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004407s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+SQL: -- phpMyAdmin SQL Dump
+-- version phpStudy 2014
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2016 年 04 月 20 日 15:57
+-- 服务器版本: 5.5.47
+-- PHP 版本: 5.3.29
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO" [ RunTime:0.0001s ]
+SQL: SET time_zone = "+00:00" [ RunTime:0.0001s ]
+SQL: /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */ [ RunTime:0.0001s ]
+SQL: /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */ [ RunTime:0.0001s ]
+SQL: /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */ [ RunTime:0.0001s ]
+SQL: /*!40101 SET NAMES utf8 */ [ RunTime:0.0001s ]
+SQL: --
+-- 数据库: `borrow`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '用户名',
+  `password` varchar(255) NOT NULL DEFAULT '' COMMENT '密码',
+  `add_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `last_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '最后登录',
+  `ip` varchar(50) NOT NULL DEFAULT '' COMMENT '登录ip',
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='管理员' AUTO_INCREMENT=3 [ RunTime:0.0116s ]
+SQL: -- --------------------------------------------------------
+
+--
+-- 表的结构 `borrow`
+--
+
+CREATE TABLE IF NOT EXISTS `borrow` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `borrow_number` varchar(50) NOT NULL DEFAULT '' COMMENT '借款序号',
+  `contract_number` varchar(50) NOT NULL DEFAULT '' COMMENT '合同号',
+  `borrow_uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '用户',
+  `borrow_duration` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '借款期限',
+  `borrow_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '借款金额',
+  `borrow_status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '借款状态 0,未还 1,已还完 2,续借',
+  `renew_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '续借的借款id',
+  `borrow_interest` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '利息',
+  `borrow_interest_rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '利率',
+  `borrow_procedures` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '手续费',
+  `borrow_procedures_rate` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '手续费率',
+  `is_procedures` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否已支付手续费',
+  `procedures_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '还手续费时间',
+  `borrow_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '借款时间',
+  `repayment_type` varchar(255) NOT NULL DEFAULT '' COMMENT '还款方式',
+  `add_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `borrow_remarks` varchar(255) NOT NULL DEFAULT '' COMMENT '借款备注',
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='借款' AUTO_INCREMENT=22 [ RunTime:0.0067s ]
+SQL: -- --------------------------------------------------------
+
+--
+-- 表的结构 `borrow_repayment`
+--
+
+CREATE TABLE IF NOT EXISTS `borrow_repayment` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `borrow_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '借款编号',
+  `borrow_uid` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '借款人',
+  `repayment_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '还款金额',
+  `repayment_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '还款时间',
+  `real_repayment_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '实际还款时间',
+  `is_repayment` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否已还款',
+  `is_late` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否逾期',
+  `late_penalty_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '逾期罚息',
+  `late_interest_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '逾期利息',
+  `is_late_money` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否收逾期',
+  `is_repayment_late_money` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否已收逾期费',
+  `add_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  `repayment_remarks` varchar(255) NOT NULL DEFAULT '' COMMENT '还款备注',
+  `late_repayment_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '逾期收取时间',
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='还款记录' AUTO_INCREMENT=218 [ RunTime:0.0063s ]
+SQL: -- --------------------------------------------------------
+
+--
+-- 表的结构 `borrow_user_relation`
+--
+
+CREATE TABLE IF NOT EXISTS `borrow_user_relation` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `borrow_uid` int(11) NOT NULL DEFAULT '0' COMMENT '借款人编号',
+  `borrow_id` int(11) NOT NULL DEFAULT '0' COMMENT '借款编号',
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='借款用户关联' AUTO_INCREMENT=1 [ RunTime:0.0056s ]
+SQL: -- --------------------------------------------------------
+
+--
+-- 表的结构 `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '借款人姓名',
+  `phone` varchar(50) NOT NULL DEFAULT '' COMMENT '借款人联系方式',
+  `add_time` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '添加时间',
+  PRIMARY KEY (`Id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='投资人' AUTO_INCREMENT=17 [ RunTime:0.0060s ]
+SQL: /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */ [ RunTime:0.0004s ]
+SQL: /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */ [ RunTime:0.0001s ]
+SQL: /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */ [ RunTime:0.0001s ]
+SQL: INSERT INTO `admin` ( `name`, `password`,`add_time`) VALUES
+( 'Administrator', '646045fc4a584cd664815bf167a81368',1487820340) [ RunTime:0.0012s ]
+
+[ 2017-02-23T11:25:40+08:00 ] 127.0.0.1 /install.php/Install/Index/complete.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004418s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000107s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000332s ]
+

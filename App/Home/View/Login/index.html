@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录-借贷管理系统</title>
+    <meta name = "keywords" content="{$SiteInfo.keywords}" >
+    <meta name = "description" content="{$SiteInfo.description}" >
+    <link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="__PUBLIC__/img/favicon.ico" />
+
+</head>
+
+<body class="gray-bg">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="middle-box text-center loginscreen  animated fadeInDown">
+            <div>
+                <div>
+                    <h2 >借贷管理系统</h2>
+                </div>
+
+                <form class="m-t" role="form" action="__MODULE__/Login/login_act" method="post">
+                    <div class="form-group">
+                        <input type="name" class="form-control" placeholder="用户名" name="name" id="login-name">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="密码" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+
+                </form>
+            </div>
+        </div>
+ </div>
+ </div>
+<!-- 调用脚部文件 -->
+<include file = "Public:footer"  />

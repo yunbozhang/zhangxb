@@ -1,0 +1,103 @@
+<!-- 调用头部文件 -->
+<include file = "Public:header" title = "{$title}" />
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>借款列表</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <p>编号列为 <del>100</del> 时为<span class='text-danger'>已到期借款</span>，编号后加 <i class="fa fa-asterisk text-danger"></i> 时此借款有<span class='text-danger'>备注</span></p>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >编号</button> </span>
+                                    <input type="text" class="form-control" id="id" placeholder="精确">
+                            </div>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >借款序号</button> </span>
+                                    <input type="text" class="form-control" id="borrow_number" placeholder="模糊">
+                            </div>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >借款人</button> </span>
+                                    <input type="text" class="form-control" id="borrow_uname" placeholder="模糊">
+                            </div>
+                    </div>
+                    <div class="col-sm-1" id="export-btn">
+                            <a data-type="xls" data-table="borrow_table" href="javascript:;" type="button" class="btn btn-danger btn-sm">导出xls</a>
+                    </div>
+                    <div class="col-sm-1">
+                            <a data-type="xls" href="__MODULE__/Borrow/add" type="button" class="btn btn-danger btn-sm">添加新借款</a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover table-bordered" id="borrow_table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>编号</th>
+                                <th>借款人</th>
+                                <th>合同号</th>
+                                <th>借款序号</th>
+                                <th>借款金额</th>
+                                <th>借款时间</th>
+                                <th>到期时间</th>
+                                <th align="center">借款期限</th>
+                                <th>已还利息</th>
+                                <th>总利息</th>
+                                <th>利率</th>
+                                <th>手续费</th>
+                                <th align="center">是否已还</th>
+                                <th>还款方式</th>
+                                <th align="center">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+        <!-- 选择还款时间模态窗口开始 -->
+    <div class="modal inmodal fade" id="confirm_procedures" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog modal-sm">
+                  <form method="post" class="form-horizontal" action="__MODULE__/Borrow/confirm_procedures">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="text-danger"><i class="fa fa-times"></i></span><span class="sr-only">Close</span></button>
+                          <p class="modal-title">还手续费时间</p>
+                      </div>
+                      <div class="modal-body">
+                                <div class="form-group">
+                                    <label class="control-label">还手续费时间</label>
+                                        <input id="hello" class="laydate-icon form-control layer-date" name="procedures_time">
+                                </div>   
+                      </div>
+                      <div class="modal-footer">
+                            <input type="hidden" name="id" value="">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                          <button type="submit" class="btn btn-primary" >确认</button>
+                      </div>
+                  </div>
+                  </form>
+           </div>
+        </div>
+        <!-- 选择还款时间模态窗口结束 -->
+<!-- 调用脚部文件 -->
+<include file = "Public:footer"  />

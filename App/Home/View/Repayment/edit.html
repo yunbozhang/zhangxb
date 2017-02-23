@@ -1,0 +1,140 @@
+<!-- 调用头部文件 -->
+<include file = "Public:header" title = "{$title}" />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>所有表单元素 <small>包括自定义样式的复选和单选按钮</small></h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </a>
+                        <a class="close-link">
+                            <i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form method="post" class="form-horizontal" action="__MODULE__/Repayment/edit_act">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">借款信息</label>
+                            <div class="col-md-3">
+                                <a href="__MODULE__/borrow/edit/id/{$borrow_repayment_list.borrow_id}">
+                                <button type="button" class="btn btn-w-m btn-primary">     
+                                借款编号:{$borrow_repayment_list.borrow_id}
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">借款人</label>
+                            <div class="col-md-3">
+                                <a href="__MODULE__/user/index/id/{$borrow_repayment_list.borrow_uid}"><button type="button" class="btn btn-w-m btn-primary">{$borrow_repayment_list.name}</button></a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">还款金额</label>
+                            <div class="col-md-3">
+                                <p class="form-control-static">{$borrow_repayment_list.repayment_money}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">应还款时间</label>
+                            <div class="col-md-3">
+                                <p class="form-control-static">{$borrow_repayment_list.repayment_time|date="Y-m-d",###}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">实际还款时间</label>
+                            <div class="col-md-3">
+                                <if condition="$borrow_repayment_list.real_repayment_time neq  0">
+                                <p class="form-control-static">{$borrow_repayment_list.real_repayment_time|date="Y-m-d",###}</p>
+                                <else />
+                                <input id="hello" class="laydate-icon form-control layer-date" name="real_repayment_time" >
+                                </if>
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">是否还款</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_repayment" <if condition="$borrow_repayment_list.is_repayment eq 0 ">checked=""</if>>未还款
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_repayment" <if condition="$borrow_repayment_list.is_repayment eq 1 ">checked=""</if>>已还款
+                                    </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">是否逾期</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_late" <if condition="$borrow_repayment_list.is_late eq 0 ">checked=""</if>> <i></i>未逾期
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_late" <if condition="$borrow_repayment_list.is_late eq 1 ">checked=""</if>><span class="text-danger">已逾期</span>
+                                    </label>
+                                    <if condition="($is_late eq 1) AND ($borrow_repayment_list.is_repayment neq 1) ">
+                                    <p class="text-danger">该借款已逾期{$count_days}天</p>
+                                    <p class="text-danger">逾期罚息{$borrow_procedures}</p>
+                                    <p class="text-danger">逾期利息{$borrow_interest_late}</p>
+                                    </if>
+                            </div>
+                        </div>
+                        <if condition="$is_late eq 1">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">逾期罚息</label>
+                            <div class="col-md-3">
+                            <input type="text" <if condition="$borrow_repayment_list.is_repayment_late_money eq 1 ">disabled=""</if> class="form-control" value="{$borrow_repayment_list.late_penalty_money}" name="late_penalty_money">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">逾期利息</label>
+                            <div class="col-md-3">
+                            <input type="text" <if condition="$borrow_repayment_list.is_repayment_late_money eq 1 ">disabled=""</if> class="form-control" value="{$borrow_repayment_list.late_interest_money}" name="late_interest_money">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >是否收逾期费</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_late_money" <if condition="$borrow_repayment_list.is_late_money eq 0 ">checked=""</if>> <i></i>不收
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_late_money" <if condition="$borrow_repayment_list.is_late_money eq 1 ">checked=""</if>> <i></i>收
+                                    </label>
+                            </div>
+                        </div>
+                        </if>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">已收逾期</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_repayment_late_money" <if condition="$borrow_repayment_list.is_repayment_late_money eq 0 ">checked=""</if>> <i></i>未收到
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_repayment_late_money" <if condition="$borrow_repayment_list.is_repayment_late_money eq 1 ">checked=""</if>> <i></i>已收
+                                    </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注</label>
+                            <div class="col-md-3">
+                                <textarea rows="10" cols="30"class="form-control" name="repayment_remarks">{$borrow_repayment_list.repayment_remarks}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-4 col-sm-offset-2">
+                                <input type="hidden" name="id" value="{$borrow_repayment_list.id}">
+                                <button class="btn btn-primary" type="submit">保存</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 调用脚部文件 -->
+<include file = "Public:footer"  />

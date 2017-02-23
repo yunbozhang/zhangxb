@@ -1,0 +1,28 @@
+<extend name="Public/base"/>
+
+<block name="header">
+    <li class="active"><a href="javascript:;">安装协议</a></li>
+    <li><a href="javascript:;">环境检测</a></li>
+    <li><a href="javascript:;">创建数据库</a></li>
+    <li><a href="javascript:;">安装</a></li>
+    <li><a href="javascript:;">完成</a></li>
+</block>
+
+<block name="body">
+    <h1>借贷管理系统 安装协议</h1>
+    <p>序言：借贷管理系统基于ThinkPHP3.2.3开发，前端使用H+框架，添加借款后，自动计算每月的回款日期，并可通过统计表和柱状图直观的显示还款情况</p>
+    <p>
+    感谢：本程序使用了ThinkPHP,BootStrap,以及网络上一些插件，在这里感谢ThinkPHP,BootStrap的开源，为本程序带来了很强大的程序基础。
+    </p>
+    <p>1.作者博客地址网址：<a href="http://www.yangzhongchao.com/">草原</a> 作者：羊种草</p>
+
+    <p>2.如果您对本程序有BUG提交或者功能建议，可以发送邮件到作者邮箱706597125@qq.com或者在博客留言</p>
+
+    <p>3.希望您在使用过程中可以加入讨论群分享使用经验，qq群号：422475804</p>
+
+</block>
+
+<block name="footer">
+    <a class="btn btn-primary btn-large" href="{:U('Install/step1')}">同意安装协议</a>
+    <a class="btn btn-large" onclick="CloseWebPage()">不同意</a>
+</block>

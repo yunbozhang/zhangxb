@@ -1,0 +1,229 @@
+<!-- 调用头部文件 -->
+<include file = "Public:header" title = "{$title}" />
+<div class="row">
+	<div class="col-sm-3">
+	    <div class="ibox float-e-margins">
+	        <div class="ibox-title">
+	            <span class="label label-success pull-right">元</span>
+	            <h5>累计借款</h5>
+	        </div>
+	        <div class="ibox-content">
+	            <h1 class="no-margins">{$all_borrow_money|money_format}</h1>
+	            <div class="stat-percent font-bold text-success"></div>
+	            <small>借款总额</small>
+	        </div>
+	    </div>
+	</div>
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-success pull-right">元</span>
+                  <h5>到期未收利息</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$now_borrow_interest|money_format}</h1>
+                  <div class="stat-percent font-bold text-success"></div>
+                  <small>截止今天到期未收利息总额</small>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-success pull-right">元</span>
+                  <h5>应收逾期费用</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$all_late_money|money_format}</h1>
+                  <div class="stat-percent font-bold"></div>
+                  <small>实收逾期总额</small>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-success pull-right">元</span>
+                  <h5>应收手续费</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$all_borrow_procedures|money_format}</h1>
+                  <div class="stat-percent font-bold text-success"></div>
+                  <small>应收手续费总额</small>
+              </div>
+          </div>
+      </div>
+      <!-- 第二行 -->
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-success pull-right">元</span>
+                  <h5>总利息</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$all_borrow_interest|money_format}</h1>
+                  <div class="stat-percent font-bold text-success"></div>
+                  <small>所有应收利息总额</small>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-danger pull-right">元</span>
+                  <h5 class="text-danger">实收利息</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$re_borrow_interest|money_format}</h1>
+                  <div class="stat-percent font-bold text-danger"></div>
+                  <small>实收利息总额</small>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-danger pull-right">元</span>
+                  <h5 class="text-danger">实收逾期费用</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$re_late_money|money_format}</h1>
+                  <div class="stat-percent font-bold text-danger"></div>
+                  <small>实收逾期总额</small>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-sm-3">
+          <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                  <span class="label label-danger pull-right">元</span>
+                  <h5 class="text-danger">实收手续费</h5>
+              </div>
+              <div class="ibox-content">
+                  <h1 class="no-margins">{$repayment_borrow_procedures|money_format}</h1>
+                  <div class="stat-percent font-bold text-danger"></div>
+                  <small>实收手续费总额</small>
+              </div>
+          </div>
+      </div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>日程</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                    <div id="calendar"></div>
+            </div>
+        </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>本月应收列表</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <p>编号后加 <i class="fa fa-asterisk text-danger"></i> 时此借款有<span class='text-danger'>备注</span></p>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >编号</button> </span>
+                                    <input type="text" class="form-control" id="id" placeholder="精确">
+                            </div>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >借款序号</button> </span>
+                                    <input type="text" class="form-control" id="borrow_number" placeholder="模糊">
+                            </div>
+                    </div>
+                    <div class="col-sm-2">
+                            <div class="input-group m-b"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-primary" >借款人</button> </span>
+                                    <input type="text" class="form-control" id="borrow_uname" placeholder="模糊">
+                            </div>
+                    </div>
+                    <div class="col-sm-6" id="export-btn">
+                            <a data-type="xls" data-table="index_table" href="javascript:;" type="button" class="btn btn-danger btn-sm">导出xls</a>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" id="index_table">
+                        <thead>
+                            <tr>
+                                  <th></th>
+                                  <th>编号</th>
+                                  <th>借款序号</th>
+                                  <th>借款人</th>
+                                  <th>还款金额</th>
+                                  <th>应还款时间</th>
+                                  <th>实际还款时间</th>
+                                  <th>是否逾期</th>
+                                  <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>
+
+    <!-- 选择还款时间模态窗口开始 -->
+<div class="modal inmodal fade" id="user_relation" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+          <div class="modal-dialog modal-sm">
+              <form method="post" class="form-horizontal" action="__MODULE__/Repayment/confirm_repayment">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="text-danger"><i class="fa fa-times"></i></span><span class="sr-only">Close</span></button>
+                      <p class="modal-title">设置实际还款时间</p>
+                  </div>
+                  <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label">实际还款时间</label>
+                                    <input id="hello" class="laydate-icon form-control layer-date" name="real_repayment_time">
+                            </div>   
+                  </div>
+                  <div class="modal-footer">
+                        <input type="hidden" name="id" value="">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                      <button type="submit" class="btn btn-primary" >确认</button>
+                  </div>
+              </div>
+              </form>
+       </div>
+    </div>
+    <!-- 选择还款时间模态窗口结束 -->
+<!-- 调用脚部文件 -->
+<include file = "Public:footer"  />
