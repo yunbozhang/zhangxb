@@ -146,7 +146,7 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <h5>添加借款人</h5>
+                    <h5>所有表单元素 <small>包括自定义样式的复选和单选按钮</small></h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -157,22 +157,114 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form method="get" class="form-horizontal" action="/index.php/Home/User/add_act" id="add_user">
+                    <form method="post" class="form-horizontal" action="/index.php/Home/Repayment/edit_act">
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">姓名</label>
+                            <label class="col-sm-2 control-label">借款信息</label>
                             <div class="col-md-3">
-                                <input name="name" class="form-control" type="text" aria-required="true" aria-invalid="true">
+                                <a href="/index.php/Home/borrow/edit/id/<?php echo ($borrow_repayment_list["borrow_id"]); ?>">
+                                <button type="button" class="btn btn-w-m btn-primary">     
+                                借款编号:<?php echo ($borrow_repayment_list["borrow_id"]); ?>
+                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">手机号</label>
+                            <label class="col-sm-2 control-label">借款人</label>
                             <div class="col-md-3">
-                                <input name="phone" class="form-control" type="text" aria-required="true" aria-invalid="true">
+                                <a href="/index.php/Home/user/index/id/<?php echo ($borrow_repayment_list["borrow_uid"]); ?>"><button type="button" class="btn btn-w-m btn-primary"><?php echo ($borrow_repayment_list["name"]); ?></button></a>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">还款金额</label>
+                            <div class="col-md-3">
+                                <p class="form-control-static"><?php echo ($borrow_repayment_list["repayment_money"]); ?></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">应还款时间</label>
+                            <div class="col-md-3">
+                                <p class="form-control-static"><?php echo (date("Y-m-d",$borrow_repayment_list["repayment_time"])); ?></p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">实际还款时间</label>
+                            <div class="col-md-3">
+                                <?php if($borrow_repayment_list["real_repayment_time"] != 0): ?><p class="form-control-static"><?php echo (date("Y-m-d",$borrow_repayment_list["real_repayment_time"])); ?></p>
+                                <?php else: ?>
+                                <input id="hello" class="laydate-icon form-control layer-date" name="real_repayment_time" ><?php endif; ?>
+                            </div>
+                        </div>                        
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">是否还款</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_repayment" <?php if($borrow_repayment_list["is_repayment"] == 0 ): ?>checked=""<?php endif; ?>>未还款
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_repayment" <?php if($borrow_repayment_list["is_repayment"] == 1 ): ?>checked=""<?php endif; ?>>已还款
+                                    </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">是否逾期</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_late" <?php if($borrow_repayment_list["is_late"] == 0 ): ?>checked=""<?php endif; ?>> <i></i>未逾期
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_late" <?php if($borrow_repayment_list["is_late"] == 1 ): ?>checked=""<?php endif; ?>><span class="text-danger">已逾期</span>
+                                    </label>
+                                    <?php if(($is_late == 1) AND ($borrow_repayment_list["is_repayment"] != 1) ): ?><p class="text-danger">该借款已逾期<?php echo ($count_days); ?>天</p>
+                                    <p class="text-danger">逾期罚息<?php echo ($borrow_procedures); ?></p>
+                                    <p class="text-danger">逾期利息<?php echo ($borrow_interest_late); ?></p><?php endif; ?>
+                            </div>
+                        </div>
+                        <?php if($is_late == 1): ?><div class="form-group">
+                            <label class="col-sm-2 control-label">逾期罚息</label>
+                            <div class="col-md-3">
+                            <input type="text" <?php if($borrow_repayment_list["is_repayment_late_money"] == 1 ): ?>disabled=""<?php endif; ?> class="form-control" value="<?php echo ($borrow_repayment_list["late_penalty_money"]); ?>" name="late_penalty_money">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">逾期利息</label>
+                            <div class="col-md-3">
+                            <input type="text" <?php if($borrow_repayment_list["is_repayment_late_money"] == 1 ): ?>disabled=""<?php endif; ?> class="form-control" value="<?php echo ($borrow_repayment_list["late_interest_money"]); ?>" name="late_interest_money">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label" >是否收逾期费</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_late_money" <?php if($borrow_repayment_list["is_late_money"] == 0 ): ?>checked=""<?php endif; ?>> <i></i>不收
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_late_money" <?php if($borrow_repayment_list["is_late_money"] == 1 ): ?>checked=""<?php endif; ?>> <i></i>收
+                                    </label>
+                            </div>
+                        </div><?php endif; ?>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">已收逾期</label>
+                            <div class="col-md-3">
+                                    <label class="radio-inline">
+                                        <input type="radio" value="0" name="is_repayment_late_money" <?php if($borrow_repayment_list["is_repayment_late_money"] == 0 ): ?>checked=""<?php endif; ?>> <i></i>未收到
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" value="1" name="is_repayment_late_money" <?php if($borrow_repayment_list["is_repayment_late_money"] == 1 ): ?>checked=""<?php endif; ?>> <i></i>已收
+                                    </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">备注</label>
+                            <div class="col-md-3">
+                                <textarea rows="10" cols="30"class="form-control" name="repayment_remarks"><?php echo ($borrow_repayment_list["repayment_remarks"]); ?></textarea>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="submit">添加</button>
+                                <input type="hidden" name="id" value="<?php echo ($borrow_repayment_list["id"]); ?>">
+                                <button class="btn btn-primary" type="submit">保存</button>
                             </div>
                         </div>
                     </form>

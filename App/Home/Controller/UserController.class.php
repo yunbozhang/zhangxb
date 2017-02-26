@@ -63,7 +63,9 @@ class UserController extends CommonController {
                       $del_user_url = U('User/del_user',array('id' =>$value['id']));
                       $user_list[$key]['action'] = <<<HTML
                      <a title="编辑" href="$user_edit_url"><i class="fa fa-edit text-navy"></i></a>
-                     <a title="删除" onclick=if(confirm("确认删除这个借款人？")){location.href="$del_user_url ";}><i class="fa fa-trash text-danger"></i></a>
+                     <a title="删除" onclick=if(confirm("确认删除这个借款人？")){href="$del_user_url";}>
+					 <i class="fa fa-trash text-danger"></i>
+					 </a>
 HTML;
               }
 

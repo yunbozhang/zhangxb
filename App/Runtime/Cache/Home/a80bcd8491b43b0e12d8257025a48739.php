@@ -142,44 +142,173 @@
 <div style="padding:10px;"></div>
 
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="ibox float-e-margins">
-                <div class="ibox-title">
-                    <h5>添加借款人</h5>
-                    <div class="ibox-tools">
-                        <a class="collapse-link">
-                            <i class="fa fa-chevron-up"></i>
-                        </a>
-                        <a class="close-link">
-                            <i class="fa fa-times"></i>
-                        </a>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>编辑借款 <small>包括自定义样式的复选和单选按钮</small></h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <form method="post" class="form-horizontal" action="/index.php/Home/Borrow/edit_act">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">借款人</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" disabled="" value="<?php echo ($borrow_list["name"]); ?>">
+                        </div>
+                        <div class="col-md-1">
+                                <a  title="关联借款人">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#user_relation">
+                                                    <i class="fa fa-plus"></i>
+                                        </button>
+                                </a>
+                        </div>
                     </div>
-                </div>
-                <div class="ibox-content">
-                    <form method="get" class="form-horizontal" action="/index.php/Home/User/add_act" id="add_user">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">姓名</label>
-                            <div class="col-md-3">
-                                <input name="name" class="form-control" type="text" aria-required="true" aria-invalid="true">
-                            </div>
+                    <?php if(!empty($borrow_user_relation_list)): ?><div class="form-group">
+                        <label class="col-sm-2 control-label">关联借款人</label>
+                        <div class="col-md-3">
+                            <?php if(is_array($borrow_user_relation_list)): foreach($borrow_user_relation_list as $k=>$list): ?><input type="text" class="form-control" disabled="" value="<?php echo ($list["name"]); ?>">
+                            <br><?php endforeach; endif; ?>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">手机号</label>
-                            <div class="col-md-3">
-                                <input name="phone" class="form-control" type="text" aria-required="true" aria-invalid="true">
-                            </div>
+                    </div><?php endif; ?>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">借款序号</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_number"]); ?></p>
                         </div>
-                        <div class="form-group">
-                            <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="submit">添加</button>
-                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">合同号</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["contract_number"]); ?></p>
                         </div>
-                    </form>
-                </div>
+                    </div>
+					
+	       <div class="form-group">
+		<label class="col-sm-2 control-label">借款期限</label>
+		<div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_duration"]); ?>个月</p>
+		 </div>
+		</div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">借款金额</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_money"]); ?></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">利息</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_interest"]); ?>个月</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">利率</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_interest_rate"]); ?>%</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手续费</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_procedures"]); ?></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">是否已收手续费</label>
+                        <div class="col-md-3">
+                                <label class="radio-inline">
+                                    <input type="radio" value="0" name="is_procedures" <?php if($borrow_list["is_procedures"] == 0 ): ?>checked=""<?php endif; ?>> <i></i>未收
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="1" name="is_procedures" <?php if($borrow_list["is_procedures"] == 1 ): ?>checked=""<?php endif; ?>> <i></i>已收
+                                </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手续费率</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["borrow_procedures_rate"]); ?>%</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">借款时间</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo (date('Y-m-d',$borrow_list["borrow_time"])); ?></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">还款方式</label>
+                        <div class="col-md-3">
+                            <p class="form-control-static"><?php echo ($borrow_list["repayment_type"]); ?></p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">备注</label>
+                        <div class="col-md-3">
+                            <textarea rows="10" cols="30"class="form-control" name="borrow_remarks"><?php echo ($borrow_list["borrow_remarks"]); ?></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <input type="hidden" name="id" value="<?php echo ($borrow_list["id"]); ?>">
+                            <button class="btn btn-primary" type="submit">保存</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
+        <!-- 添加关联借款人模态窗口开始 -->
+    <div class="modal inmodal fade" id="user_relation" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+              <div class="modal-dialog modal-sm">
+                  <form method="post" class="form-horizontal" action="/index.php/Home/Borrow/add_user_relation_ect">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="text-danger"><i class="fa fa-times"></i></span><span class="sr-only">Close</span></button>
+                          <h6 class="modal-title">添加关联借款人</h6>
+                      </div>
+                      <div class="modal-body">
+                               <div class="form-group">
+                                   <label >借款人</label>
+                                   <select class="form-control m-b" name="borrow_uid">
+                                       <?php if(is_array($user_list)): foreach($user_list as $k=>$list): if($list["id"] == $borrow_list.borrow_uid): ?>5555
+                                       <?php else: ?>
+                                       <option value="<?php echo ($list["id"]); ?>"><?php echo ($list["name"]); ?></option><?php endif; endforeach; endif; ?>
+                                   </select>
+                               </div>
+                                <p>没找到你要添加的借款人?点击<a href="/index.php/Home/User/add">这里添加</a></p>
+                      </div>
+                      <div class="modal-footer">
+                            <input type="hidden" name="borrow_id" value="<?php echo ($borrow_list["id"]); ?>">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                          <button type="submit" class="btn btn-primary" >保存</button>
+                      </div>
+                  </div>
+                  </form>
+           </div>
+        </div>
+        <!-- 添加关联借款人模态窗口结束 -->
 <!-- 调用脚部文件 -->
         <div style="padding:20px;"></div>
         <div class="footer">

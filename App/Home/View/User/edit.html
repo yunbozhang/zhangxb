@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form method="get" class="form-horizontal" action="__MODULE__/User/add_act" id="edit_user">
+                    <form method="get" class="form-horizontal"  id="edit_user">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">姓名</label>
 
@@ -35,8 +35,8 @@
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="submit">添加</button>
-                                <button class="btn btn-white" type="submit">取消</button>
+                                <button class="btn btn-primary" type="submit" formaction="__MODULE__/User/add_act">添加</button>
+                                <button class="btn btn-white" type="submit" formaction="__MODULE__/User/Index">取消</button>
                             </div>
                         </div>
                     </form>

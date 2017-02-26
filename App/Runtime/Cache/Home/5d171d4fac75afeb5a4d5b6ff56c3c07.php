@@ -9,7 +9,7 @@
     <title><?php echo ($title); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/Public/css/bootstrap.min.css-v=3.3.5.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Public/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/Public/css/plugins/iCheck/custom.css" rel="stylesheet">
     <!-- morris -->
@@ -259,9 +259,9 @@
         </div>
         </div>
 
-    <script src="/Public/js/jquery.min.js-v=2.1.4"></script>
+    <script src="/Public/js/jquery.js"></script>
     <script src="/Public/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/Public/js/bootstrap.min.js-v=3.3.5"></script>
+    <script src="/Public/js/bootstrap.min.js"></script>
 
     <script src="/Public/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/Public/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>

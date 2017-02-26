@@ -9,7 +9,7 @@
     <title><?php echo ($title); ?></title>
     <meta name = "keywords" content="<?php echo ($SiteInfo["keywords"]); ?>" >
     <meta name = "description" content="<?php echo ($SiteInfo["description"]); ?>" >
-    <link href="/Public/css/bootstrap.min.css-v=3.3.5.css" rel="stylesheet">
+    <link href="/Public/css/bootstrap.min.css" rel="stylesheet">
     <link href="/Public/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="/Public/css/plugins/iCheck/custom.css" rel="stylesheet">
     <!-- morris -->
@@ -157,7 +157,7 @@
                     </div>
                 </div>
                 <div class="ibox-content">
-                    <form method="get" class="form-horizontal" action="/index.php/Home/User/add_act" id="edit_user">
+                    <form method="get" class="form-horizontal"  id="edit_user">
                         <div class="form-group">
                             <label class="col-sm-2 control-label">姓名</label>
 
@@ -177,8 +177,8 @@
                         <div class="hr-line-dashed"></div>
                         <div class="form-group">
                             <div class="col-sm-4 col-sm-offset-2">
-                                <button class="btn btn-primary" type="submit">添加</button>
-                                <button class="btn btn-white" type="submit">取消</button>
+                                <button class="btn btn-primary" type="submit" formaction="/index.php/Home/User/add_act">添加</button>
+                                <button class="btn btn-white" type="submit" formaction="/index.php/Home/User/Index">取消</button>
                             </div>
                         </div>
                     </form>
@@ -200,9 +200,9 @@
         </div>
         </div>
 
-    <script src="/Public/js/jquery.min.js-v=2.1.4"></script>
+    <script src="/Public/js/jquery.js"></script>
     <script src="/Public/js/jquery-ui-1.10.4.min.js"></script>
-    <script src="/Public/js/bootstrap.min.js-v=3.3.5"></script>
+    <script src="/Public/js/bootstrap.min.js"></script>
 
     <script src="/Public/js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="/Public/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
