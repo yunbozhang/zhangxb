@@ -58,8 +58,8 @@ class BorrowController extends CommonController {
                 //处理数据
                 foreach ($borrow_list as $key => $value) {
 
-                        $borrow_list[$key]['borrow_number'] = '<a href="'.U('Borrow/edit',array('id' => $value['borrow_id'])).'">'.$value['borrow_number'].'</a>';
-                        $borrow_list[$key]['name'] = '<a href="'.U('User/edit',array('id' => $value['borrow_uid'])).'">'.$value['name'].'</a>';
+                        $borrow_list[$key]['borrow_number'] = $value['borrow_number'];
+                        $borrow_list[$key]['name'] = $value['name'];
                         $borrow_list[$key]['borrow_time'] = date('Y-m-d',$value['borrow_time']);
                         $borrow_end_time = M('borrow_repayment')->where('borrow_id='.$value['id'])->order('id desc')->getfield('repayment_time');
                         $borrow_list[$key]['end_time'] = date('Y-m-d',$borrow_end_time);
@@ -338,7 +338,7 @@ HTML;
     	}
     	
     	//借款的年利率
-    	if (isset($data['borrow_interest_rate']) && $data['borrow_interest_rate']>0){
+    	if (isset($data['borrow_interest_rate']) && $data['borrow_interest_rate']>=0){
     		  $borrow_interest_rate = $data['borrow_interest_rate'];
     	}else{
     		  return "";

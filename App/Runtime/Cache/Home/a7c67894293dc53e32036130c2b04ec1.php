@@ -120,7 +120,7 @@
                         </div>
                         <ul class="nav navbar-top-links navbar-left">
                             <li>
-                                <a class="m-r-lg text-muted welcome-message"><?php echo ($title); ?></a>
+                                <a class="m-r-lg text-muted welcome-message" href="/index.php"><?php echo ($title); ?></a>
                             </li>
                         </ul>
                         <ul class="nav navbar-top-links navbar-right">

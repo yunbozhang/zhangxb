@@ -50,6 +50,22 @@
                         </span>
                         </div>
                     </li>
+					<li>
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            <span class="nav-label">借款人</span>
+                            <!-- <span class="fa arrow"></span> -->
+                        </a>
+                        <ul class="nav nav-second-level">
+						<li>
+                                <a class="J_menuItem" href="/index.php/Home/User/add" data-index="5">添加借款人</a>
+                            </li>
+                            <li>
+                                <a class="J_menuItem" href="/index.php/Home/User" data-index="4">借款人列表</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
                     <li>
                         <a href="#">
                             <i class="fa fa-home"></i>
@@ -80,22 +96,8 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-user"></i>
-                            <span class="nav-label">借款人</span>
-                            <span class="fa arrow"></span>
-                        </a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="J_menuItem" href="/index.php/Home/User" data-index="4">借款人列表</a>
-                            </li>
-                            <li>
-                                <a class="J_menuItem" href="/index.php/Home/User/add" data-index="5">添加借款人</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
+                    
+             <!--        <li>
                         <a href="#">
                             <i class="fa fa-user"></i>
                             <span class="nav-label">系统设置</span>
@@ -106,7 +108,7 @@
                                 <a class="J_menuItem" href="/index.php/Home/Config/dbbak" data-index="4">备份数据库</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             </nav>
@@ -120,7 +122,7 @@
                         </div>
                         <ul class="nav navbar-top-links navbar-left">
                             <li>
-                                <a class="m-r-lg text-muted welcome-message"><?php echo ($title); ?></a>
+                                <a class="m-r-lg text-muted welcome-message" href="/index.php"><?php echo ($title); ?></a>
                             </li>
                         </ul>
                         <ul class="nav navbar-top-links navbar-right">
@@ -162,7 +164,7 @@
                         <label class="col-sm-2 control-label">借款人</label>
                         <div class="col-sm-3">
                             <select class="form-control m-b" name="borrow_uid">
-                                <?php if(is_array($user_list)): foreach($user_list as $k=>$list): ?><option value="<?php echo ($list["id"]); ?>"><?php echo ($list["name"]); ?></option><?php endforeach; endif; ?>
+                                <?php if(is_array($user_list)): foreach($user_list as $k=>$list): ?><option value="<?php echo ($list["id"]); ?>"><?php echo ($list["name"]); echo ($list["phone"]); ?></option><?php endforeach; endif; ?>
                             </select>
                         </div>
                     </div>
@@ -229,7 +231,7 @@
                         <label class="col-sm-2 control-label">还款方式</label>
                         <div class="col-md-3">
                             <select class="form-control m-b" name="repayment_type">
-                                <option value="付息还本">付息还本</option>
+                                <!-- <option value="付息还本">付息还本</option> -->
                                 <option value="到期本息">到期本息</option>
                             </select>
                         </div>
@@ -252,7 +254,7 @@
                 One more thing！
             </div>
             <div>
-                <strong>Copyright</strong> <a target="_bank" href="http://www.yangzhongchao.com/">羊种草</a> &copy; 2016
+                <strong>Copyright</strong> <a target="_bank" >诺新商贸</a> &copy; 2016
             </div>
         </div>
 
@@ -401,8 +403,8 @@
                                 min:1
                             },
                             borrow_interest_rate: {
-                                required: !0,
-                                min:1
+                                <!-- required: !0, -->
+                                min:0
                             },
                             borrow_procedures_rate: {
                                 required: !0,

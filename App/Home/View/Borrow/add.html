@@ -21,7 +21,7 @@
                         <div class="col-sm-3">
                             <select class="form-control m-b" name="borrow_uid">
                                 <foreach name="user_list" item="list" key="k">
-                                <option value="{$list.id}">{$list.name}</option>
+                                <option value="{$list.id}">{$list.name}{$list.phone}</option>
                                 </foreach>
                             </select>
                         </div>
@@ -89,7 +89,7 @@
                         <label class="col-sm-2 control-label">还款方式</label>
                         <div class="col-md-3">
                             <select class="form-control m-b" name="repayment_type">
-                                <option value="付息还本">付息还本</option>
+                                <!-- <option value="付息还本">付息还本</option> -->
                                 <option value="到期本息">到期本息</option>
                             </select>
                         </div>
