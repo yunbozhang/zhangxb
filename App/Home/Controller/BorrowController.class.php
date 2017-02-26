@@ -477,7 +477,7 @@ HTML;
                 }
                 
                 //借款的年利率
-                if (isset($data['borrow_interest_rate']) && $data['borrow_interest_rate']>0){
+                if (isset($data['borrow_interest_rate']) && $data['borrow_interest_rate']>=0){
                       $borrow_interest_rate = $data['borrow_interest_rate'];
                 }else{
                       return "";

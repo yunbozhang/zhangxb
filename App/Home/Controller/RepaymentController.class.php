@@ -178,7 +178,7 @@ HTML;
         $borrow_repayment = M('borrow_repayment');
         $result = $borrow_repayment->where('id = '.I('post.id'))->save($data);
         if ($result>0){
-             $this->success("更改还款信息成功！",U('Repayment/edit',array('id' => I('post.id'))));
+             $this->success("更改还款信息成功！",U('Repayment/index'));
          }else{
              $this->error("更改还款信息失败！".$borrow_repayment->getDbError());
         };

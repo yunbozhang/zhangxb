@@ -57,12 +57,13 @@
                             <!-- <span class="fa arrow"></span> -->
                         </a>
                         <ul class="nav nav-second-level">
+						<li>
+                                <a class="J_menuItem" href="/index.php/Home/User/add" data-index="5">添加借款人</a>
+                            </li>
                             <li>
                                 <a class="J_menuItem" href="/index.php/Home/User" data-index="4">借款人列表</a>
                             </li>
-                            <li>
-                                <a class="J_menuItem" href="/index.php/Home/User/add" data-index="5">添加借款人</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <li>
@@ -194,7 +195,7 @@
                 One more thing！
             </div>
             <div>
-                <strong>Copyright</strong> <a target="_bank" href="http://www.yangzhongchao.com/">羊种草</a> &copy; 2016
+                <strong>Copyright</strong> <a target="_bank" >诺新商贸</a> &copy; 2016
             </div>
         </div>
 
@@ -343,8 +344,8 @@
                                 min:1
                             },
                             borrow_interest_rate: {
-                                required: !0,
-                                min:1
+                                <!-- required: !0, -->
+                                min:0
                             },
                             borrow_procedures_rate: {
                                 required: !0,
@@ -379,8 +380,8 @@
                                 min:1
                             },
                             borrow_interest_rate: {
-                                required: !0,
-                                min:1
+                                <!-- required: !0, -->
+                                min:0
                             },
                             borrow_procedures_rate: {
                                 required: !0,

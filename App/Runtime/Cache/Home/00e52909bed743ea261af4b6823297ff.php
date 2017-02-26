@@ -561,8 +561,8 @@
                                 min:1
                             },
                             borrow_interest_rate: {
-                                required: !0,
-                                min:1
+                                <!-- required: !0, -->
+                                min:0
                             },
                             borrow_procedures_rate: {
                                 required: !0,
